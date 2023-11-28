@@ -4,3 +4,17 @@
  * This is a general purpose Gradle build.
  * To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.4/samples
  */
+
+println "System property read in build script during configuration: ${System.getProperty('system')}"
+
+/*
+
+    This does not work!
+
+tasks.register('printProperty', PrintValue) {
+    // Using the Gradle API, provides a lazy Provider<String> wired to a task input
+    inputValue = providers.systemProperty('system')
+    println "System property read in build script during execution: ${inputValue}"
+}
+
+*/

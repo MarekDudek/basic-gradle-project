@@ -1,0 +1,1 @@
+println "System property read in init script during configuration: ${System.getProperty('system')}"
