@@ -18,3 +18,19 @@ tasks.register('printProperty', PrintValue) {
 }
 
 */
+
+println "Gradle property read in build script during configuration: ${gradlePropertiesProp}"
+println "Gradle property read in build script during configuration: ${project.gradlePropertiesProp}"
+println "Gradle property read in build script during configuration: ${project['gradlePropertiesProp']}"
+println "Gradle property read in build script during configuration: ${project['gradleProperties.with.dots']}"
+
+/*
+
+    This does not work!
+
+tasks.register('printProperty', PrintValue) {
+    // Using the API, provides a lazy Provider<String> wired to a task input
+    inputValue = providers.gradleProperty('gradlePropertiesProp')
+}
+
+*/

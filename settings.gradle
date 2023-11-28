@@ -8,3 +8,8 @@
 rootProject.name = 'basic-gradle-project'
 
 println "System property read in settings script during configuration: ${System.getProperty('system')}"
+
+println "Gradle property read in settings script during configuration: ${gradlePropertiesProp}"
+println "Gradle property read in settings script during configuration: ${settings.gradlePropertiesProp}"
+println "Gradle property read in settings script during configuration: ${settings['gradlePropertiesProp']}"
+println "Gradle property read in settings script during configuration: ${settings['gradleProperties.with.dots']}"

@@ -1,1 +1,13 @@
 println "System property read in init script during configuration: ${System.getProperty('system')}"
+
+settingsEvaluated { settings ->
+
+    // Using the API, provides a lazy Provider<String>
+    println "Gradle property read in init script during configuration: ${settings.providers.gradleProperty('gradlePropertiesProp').get()}"
+
+    // Using Groovy dynamic names
+    println "Gradle property read in init script during configuration: ${settings.gradlePropertiesProp}"
+
+    // Using Groovy dynamic array notation on `settings`
+    println "Gradle property read in init script during configuration: ${settings['gradlePropertiesProp']}"
+}
